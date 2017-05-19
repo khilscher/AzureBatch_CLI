@@ -1,5 +1,5 @@
 # Azure Batch CLI     
-This script demonstrates interacting with the [Azure Batch] (https://azure.microsoft.com/en-us/services/batch/)service using the Azure CLI (also known as the xplat cli). 
+This script demonstrates interacting with the Azure Batch (https://azure.microsoft.com/en-us/services/batch/) service using the Azure CLI (also known as the xplat cli). 
 
 Most Azure Batch examples show uploading/downloading input and executable files from Azure Blob Storage. However, in the case where a large volume of files needs to be copied to the worker nodes, or copied off the worker nodes, Azure Blob storage throughput limits and throttling may slow down these jobs. To work around this issue you can run the worker nodes in your own VNET/Subnet next to an existing NFS server VM, which provides low latency, greater network bandwidth and no throttling limits (beyond the VM bandwidth limits). 
 
