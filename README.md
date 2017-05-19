@@ -27,8 +27,7 @@ The script will perform the following:
 - Create one task for each input file found with the extension specified in INPUT_FILE_EXTENSION
 - Install the NFS client on the CentOS 7 worker VMs
 - Mount the NFS mount point exported from the NFS server (which can also be the Head node VM)
-- Run the executable with the input file as an argument, spreading these tasks across all the worker nodes.
-- The executable writes its output back to the same NFS mount point
+- Run the executable with the input file as an argument, spreading these tasks across all the worker nodes. Your executable can write its output back to the same NFS mount point
 
 ## Requirements
 1. You have already setup an Azure Batch account with Pool Allocation mode set to "User Subscription"
