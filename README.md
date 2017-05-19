@@ -15,10 +15,10 @@ The `sendtoazurebatch.sh` script is designed to deploy and run Linux worker node
 `./sendtoazurebatch.sh -i /mnt/resource/batch/tasks/shared/files/ -c /mnt/resource/batch/tasks/shared/files/calpuff.exe -j MyJob -p MyPool`
 
 where:
--i is the path to the input files (it will look for files with the extension you specify in 
--c is the path to the executable
--j is the name of the Job
--p is the name of the Pool
+- -i is the path to the input files (it will look for files with the extension you specify in 
+- -c is the path to the executable
+- -j is the name of the Job
+- -p is the name of the Pool
 
 The script will perform the following:
 
