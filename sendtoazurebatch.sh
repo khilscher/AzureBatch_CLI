@@ -106,7 +106,7 @@ az batch pool resize --pool-id $POOL_NAME --target-dedicated $POOL_NODE_COUNT
 # Create job
 az batch job create --id $JOB_NAME --pool-id $POOL_NAME
 
-# Now we will add tasks to the job. One task per .inp file found.
+# Now we will add tasks to the job. One task per input file found.
 # We need to send Json to Batch because the CLI doesn't support all the options we need when creating a task
 # Batch API Reference https://docs.microsoft.com/en-us/rest/api/batchservice/
 echo Searching for input files at: $INPUT_FILE_PATH
