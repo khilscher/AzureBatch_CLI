@@ -32,8 +32,8 @@ The script will perform the following:
 ## Requirements
 - Script requires Azure CLI 2 installed. See https://docs.microsoft.com/en-us/cli/azure/install-azure-cli
 -	The head node where this script is run should have the same mount point path to the input files as the worker nodes. E.g. /mnt/resource/batch/tasks/shared/files/ should also exist on the head node.
-  -	If the head node VM and NFS server are the same VM, then simply create the nfs mount point to itself. 
--	The az login command on 42
+  *	If the head node VM and NFS server are the same VM, then simply create the nfs mount point to itself. 
+-	The az login command on line 42
   -	Once you have authenticated to Azure using this command, you can comment it out as it can become annoying. Azure will cache the AAD login for a period of time in your shell. 
   - Alternatively you can setup a Service Principal login. I’ve added the code (commented out) and links to set this up. 
 -	Ensure you have a VNET with a subnet already created in the Azure Portal. Also, the head node VM should already be connected to this same VNET/Subnet.  
