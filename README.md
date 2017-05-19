@@ -1,14 +1,15 @@
 # Azure Batch CLI     
-This script demonstrates interacting with the Azure Batch Service using the Azure CLI (also known as the xplat cli).  
+This script demonstrates interacting with the [Azure Batch] (https://azure.microsoft.com/en-us/services/batch/)service using the Azure CLI (also known as the xplat cli). 
 
 Most Azure Batch examples show uploading/downloading input and executable files from Azure Blob Storage. However, in the case where a large volume of files needs to be copied to the worker nodes, or copied off the worker nodes, Azure Blob storage throughput limits and throttling may slow down these jobs. To work around this issue you can run the worker nodes in your own VNET/Subnet next to an existing NFS server VM, which provides low latency, greater network bandwidth and no throttling limits (beyond the VM bandwidth limits). 
 
-The sendtoazurebatch.sh script is designed to deploy and run the worker nodes in your own subscription and VNET/Subnet. The worker nodes connect to an existing NFS server VM (which you manually provision) that contains the input files and executable to run. Often this NFS Server VM can also act as your head node, where you run this script from. 
+The `sendtoazurebatch.sh` script is designed to deploy and run Linux worker nodes in your own subscription and VNET/Subnet. The worker nodes connect to an existing NFS server VM (which you manually provision) that contains the input files and executable to run. Often this NFS Server VM can also act as your head node, where you run this script from. This script was built around CentOS 7 but can be easily modified to support any Linux distro supported by Azure Batch.
 
 ## Features
 - Works with an Azure Batch account set to “UserSubscription” (run in your own subscription)
 - Authenticates with AAD (required when running batch in "UserSubscription" mode
 - Connect worker nodes to a VNET/Subnet in your subscription (for high speed, low latency private network connectivity between worker nodes and the head node/NFS server).
+- Runs startup commands and task commands as 'admin'
 
 ## Syntax   
 `./sendtoazurebatch.sh -i /mnt/resource/batch/tasks/shared/files/ -c /mnt/resource/batch/tasks/shared/files/calpuff.exe -j MyJob -p MyPool`
