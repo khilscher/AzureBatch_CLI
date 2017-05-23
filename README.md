@@ -39,6 +39,6 @@ The script will perform the following:
 1.	To obtain the SUBNET_ID, browse to https://resources.azure.com/ and perform the following: Click Subscriptions->your subscription where you are running Azure Batch->resourceGroups->select the resource group containing the VNET->Providers->Microsoft.Network->virtualNetworks->subnets->select the subnet (sometimes called ‘default’) and copy the contents of “id” into the SUBNET_ID. It should resemble something like: `/subscriptions/388994e7-efd5-43cc-a103-71e9071ea717/resourceGroups/CentOS/providers/Microsoft.Network/virtualNetworks/CentOS-vnet/subnets/default`
 1. You will also have to adjust the IP of the NFS server in STARTUP_CMDS and add any other startup commands, separated by a `;`
 1. Also with NFS there are lots of tuning options. I recommend playing with the NFS options to optimize file read/write performance. 
-1. Not all the commands arguments (e.g. autoUser, elevationLevel) we need are supported in the current version of Azure CLI. So in a few spots I've resorted to sending Json to the Batch API. This should be resolved with the integration of the next release of the Azure Batck Python SDK (3.0) into the Azure CLI. 
+1. Not all the commands arguments (e.g. autoUser, elevationLevel) we need are supported in the current version of Azure CLI (2.0.6). So in a few spots I've resorted to sending Json to the Batch API. This should be resolved with the integration of the next release of the Azure Batch Python SDK (3.0) into the Azure CLI. 
 
 
