@@ -15,15 +15,15 @@ The `sendtoazurebatch.sh` script is designed to deploy and run Linux worker node
 `./sendtoazurebatch.sh -i /mnt/resource/batch/tasks/shared/files/ -c /mnt/resource/batch/tasks/shared/files/calpuff.exe -j MyJob -p MyPool`
 
 where:
-- -i is the path to the input files (it will look for files with the extension you specify in 
+- -i is the path to the input files (it will look for files with the extension you specify in INPUT_FILE_EXTENSION)
 - -c is the path to the executable
 - -j is the name of the Job
 - -p is the name of the Pool
 
 The script will perform the following:
 
-- Create one Pool
-- Create one Job
+- Create one Pool in an existing Azure Batch account
+- Create one Job assigned to the Pool
 - Create one task for each input file found with the extension specified in INPUT_FILE_EXTENSION
 - Install the NFS client on the CentOS 7 worker VMs
 - Mount the NFS mount point exported from the NFS server (which can also be the Head node VM)
