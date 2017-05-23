@@ -12,7 +12,7 @@ The `sendtoazurebatch.sh` script is designed to deploy and run Linux worker node
 - Runs startup commands and task commands with 'admin' permissions on the Linux worker nodes
 
 ## Syntax   
-`./sendtoazurebatch.sh -i /mnt/resource/batch/tasks/shared/files/ -c /mnt/resource/batch/tasks/shared/files/calpuff.exe -j MyJob -p MyPool`
+`./sendtoazurebatch.sh -i /mnt/resource/batch/tasks/shared/files/ -c /mnt/resource/batch/tasks/shared/files/my.exe -j MyJob -p MyPool`
 
 where:
 - -i is the path to the input files (it will look for files with the extension you specify in INPUT_FILE_EXTENSION)
